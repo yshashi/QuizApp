@@ -1,0 +1,28 @@
+{
+  "register": [
+    {
+      "email": "yshashi30@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "email": "sashi@gmail.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "email": "alex@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 4,
+      "email": "admin@123",
+      "password": "123456"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

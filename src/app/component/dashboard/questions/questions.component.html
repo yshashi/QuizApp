@@ -1,0 +1,52 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="d-flex justify-content-between p-3">
+            <div class="image">
+                <img src="assets/quiz.png" width="70" alt="logo">
+            </div>
+            <div class="quiz-header">
+                <h4 style="font-family: cursive;">Quiz Title Here!</h4>
+                <span style="font-style: italic;">Quiz subtitle goes here....</span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between p-5">
+            <div class="score">
+                <h5>{{points}} Points</h5>
+            </div>
+            <div class="question-remain">
+                <span style="font-style: italic;">Question {{currentQuestion+1}} of {{questionList.length}} </span>
+            </div>
+            <div class="timer">
+                <h5>{{counter}} sec ⏱</h5>
+            </div>
+        </div>
+        <ng-container>
+            <div class="question">
+                <div class="card">
+                    <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+                </div>
+            </div>
+            <div class="options ">
+                <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                    <li (click)="answer(currentQuestion,option)">
+                        <div appChangeBg [isCorrect]="option.correct" class="card">
+                            {{option.text}}
+                        </div>
+                    </li>
+
+                </ol>
+            </div>
+        </ng-container>
+        <div class="d-flex justify-content-between">
+
+            <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i class="fa text-primary fa-chevron-left fa-3x"></i></button>
+
+
+            <button class="btn"> <i class="fa fa-refresh text-secondary fa-3x"></i></button>
+
+
+            <button class="btn" (click)="nextQuestion(currentQuestion)"><i class="fa fa-chevron-right fa-3x text-primary"></i></button>
+
+        </div>
+    </div>
+</div>
